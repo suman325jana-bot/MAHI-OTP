@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login - MAHI</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Access affordable temporary numbers for popular apps like Winzo, Telegram, WhatsApp, Rush, and Instagram worldwide. Enjoy rapid setup and competitive pricing for seamless communication solutions">
+    <meta name="keywords" content="temporary numbers, disposable numbers, virtual numbers, app verification, Winzo number, Telegram number, WhatsApp number, Rush number, Instagram number, cheap temporary numbers, fast temporary numbers, global temporary numbers, instant temporary numbers, secure temporary numbers">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Instant Temporary Numbers for Winzo, Telegram, WhatsApp, Rush, Instagram & More">
+    <meta property="og:url" content="https://supersms.xyz">
+    <meta property="og:site_name" content="MAHI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://placehold.co/32x32/3b82f6/ffffff?text=M">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 500px;
+            padding: 1rem;
+        }
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+        }
+        .title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-size: 1rem;
+            color: #64748b;
+        }
+        .signup-link {
+            color: #3b82f6;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .signup-link:hover {
+            text-decoration: underline;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        .input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        .input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        .password-container {
+            position: relative;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #6b7280;
+            cursor: pointer;
+            font-size: 1.25rem;
+        }
+        .button {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .button:hover {
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+        }
+        .button:active {
+            transform: translateY(0);
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+        }
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background-color: #e5e7eb;
+        }
+        .divider-text {
+            padding: 0 1rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .google-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: white;
+            border: 1px solid #d1d5db;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .google-btn:hover {
+            background-color: #f3f4f6;
+            border-color: #9ca3af;
+            transform: translateY(-2px);
+        }
+        .google-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.75rem;
+        }
+        .error-message {
+            color: #ef4444;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+        .footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+        .footer a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .form-group:focus-within {
+            position: relative;
+        }
+        .form-group:focus-within .label {
+            color: #3b82f6;
+        }
+        .input:valid {
+            border-color: #10b981;
+        }
+        .input:invalid:not(:focus):not(:placeholder-shown) {
+            border-color: #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="logo">MAHI</div>
+                <h1 class="title">Sign In to MAHI</h1>
+                <p class="subtitle">New Here? <a href="/register" class="signup-link">Create an Account</a></p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="label" for="email">Email</label>
+                    <input class="input" type="email" id="email" name="email" required>
+                    <div id="emailError" class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="label" for="password">Password</label>
+                    <div class="password-container">
+                        <input class="input" type="password" id="password" name="password" required>
+                        <button type="button" class="toggle-password" id="togglePassword">👁️</button>
+                    </div>
+                    <div id="passwordError" class="error-message"></div>
+                </div>
+                
+                <button type="submit" class="button" id="login">
+                    <span class="button-text">Login</span>
+                    <span class="loading" style="display: none;" id="loadingSpinner"></span>
+                </button>
+            </form>
+            
+            <div class="divider">
+                <div class="divider-line"></div>
+                <div class="divider-text">or</div>
+                <div class="divider-line"></div>
+            </div>
+            
+            <button class="google-btn" id="googleLogin">
+                <img src="https://placehold.co/24x24/ffffff/000000?text=G" alt="Google" class="google-icon">
+                Continue with Google
+            </button>
+            
+            <div class="footer">
+                <p>© 2025 MAHI. All rights reserved.</p>
+                <p><a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const togglePassword = document.getElementById('togglePassword');
+            const googleLogin = document.getElementById('googleLogin');
+            const loginButton = document.getElementById('login');
+            const buttonText = document.querySelector('.button-text');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            
+            // Toggle password visibility
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.textContent = type === 'password' ? '👁️' : '🔒';
+            });
+            
+            // Form validation
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let isValid = true;
+                
+                // Clear previous errors
+                document.getElementById('emailError').textContent = '';
+                document.getElementById('passwordError').textContent = '';
+                
+                // Validate email
+                const email = emailInput.value.trim();
+                if (!email) {
+                    document.getElementById('emailError').textContent = 'Email is required';
+                    isValid = false;
+                } else if (!/\S+@\S+\.\S+/.test(email)) {
+                    document.getElementById('emailError').textContent = 'Email is invalid';
+                    isValid = false;
+                }
+                
+                // Validate password
+                const password = passwordInput.value;
+                if (!password) {
+                    document.getElementById('passwordError').textContent = 'Password is required';
+                    isValid = false;
+                } else if (password.length < 6) {
+                    document.getElementById('passwordError').textContent = 'Password must be at least 6 characters';
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    // Show loading state
+                    buttonText.textContent = 'Logging in...';
+                    loadingSpinner.style.display = 'inline-block';
+                    loginButton.disabled = true;
+                    
+                    // Simulate API call
+                    setTimeout(() => {
+                        // Reset button state
+                        buttonText.textContent = 'Login';
+                        loadingSpinner.style.display = 'none';
+                        loginButton.disabled = false;
+                        
+                        // Show success message
+                        alert('Login successful! (This is a demo)');
+                        
+                        // In a real application, you would redirect to dashboard
+                        // window.location.href = '/dashboard';
+                    }, 2000);
+                }
+            });
+            
+            // Google login simulation
+            googleLogin.addEventListener('click', function() {
+                // Show loading state
+                this.innerHTML = '<span class="loading" style="margin-right: 0.5rem;"></span>Redirecting...';
+                this.disabled = true;
+                
+                setTimeout(() => {
+                    alert('Google login would be initiated (This is a demo)');
+                    this.innerHTML = '<img src="https://placehold.co/24x24/ffffff/000000?text=G" alt="Google" class="google-icon">Continue with Google';
+                    this.disabled = false;
+                }, 1500);
+            });
+            
+            // Add input validation in real-time
+            emailInput.addEventListener('input', function() {
+                if (this.value && !/\S+@\S+\.\S+/.test(this.value)) {
+                    document.getElementById('emailError').textContent = 'Email is invalid';
+                } else {
+                    document.getElementById('emailError').textContent = '';
+                }
+            });
+            
+            passwordInput.addEventListener('input', function() {
+                if (this.value && this.value.length < 6) {
+                    document.getElementById('passwordError').textContent = 'Password must be at least 6 characters';
+                } else {
+                    document.getElementById('passwordError').textContent = '';
+                }
+            });
+            
+            // Add floating label effect
+            const inputs = document.querySelectorAll('.input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.querySelector('.label').style.color = '#3b82f6';
+                });
+                
+                input.addEventListener('blur', function() {
+                    if (!this.value) {
+                        this.parentElement.querySelector('.label').style.color = '#374151';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
