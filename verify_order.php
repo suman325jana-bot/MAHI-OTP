@@ -1,0 +1,1 @@
+<?php require 'core/db.php'; if(empty($_SESSION['admin'])) header('Location: admin/login.php'); $id=(int)($_GET['id']??0); $db=db(); $db->query("UPDATE orders SET status='verified' WHERE id=$id"); header('Location: admin/dashboard.php'); exit; ?>

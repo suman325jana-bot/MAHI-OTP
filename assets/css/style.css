@@ -1,0 +1,14 @@
+/* Mahi Travel v4 styles (dark-ish card layout) */
+:root{--bg:#0b1220;--card:#0f1624;--accent:#2dd4bf;--muted:#94a3b8}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#071022,#0b1220);color:#e6eef8}
+.container{max-width:1000px;margin:18px auto;padding:20px}
+.header{display:flex;justify-content:space-between;align-items:center;padding:10px 0}
+.brand{font-weight:800;color:#ffb86b;font-size:1.4rem}
+.credits{background:#072033;padding:8px 12px;border-radius:999px;color:var(--accent)}
+.grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+.metrics .metric{margin-bottom:12px;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
+.btn{background:linear-gradient(90deg,#ff6b6b,#ff8a8a);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;display:inline-block}
+.small{font-size:0.9rem;color:var(--muted)}
+.footer{margin-top:18px;color:var(--muted);font-size:0.9rem}
+@media(max-width:900px){ .grid{grid-template-columns:1fr} .header{flex-direction:column;align-items:flex-start} }

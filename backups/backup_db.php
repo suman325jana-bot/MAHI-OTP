@@ -1,0 +1,1 @@
+<?php require_once '../core/db.php'; $db=db(); $backupDir=__DIR__.'/dumps/'; if(!is_dir($backupDir)) mkdir($backupDir,0755,true); $file=$backupDir.'mahi_travel_'.date('Ymd_His').'.sql'; $cmd="mysqldump -u".DB_HOST." -p".DB_PASS." " . DB_NAME . " > " . escapeshellarg($file); exec($cmd,$out,$rc); if($rc===0) echo 'Backup saved: '.$file; else echo 'Backup failed'; ?>
